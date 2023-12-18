@@ -1,0 +1,18 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const playlist = document.getElementById("playlist");
+    const audioPlayer = document.getElementById("audio-player");
+
+    // Add click event listeners to each song in the playlist
+    playlist.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+            const songSrc = event.target.getAttribute("data-src");
+            playSong(songSrc);
+        }
+    });
+
+    // Function to play a song
+    function playSong(src) {
+        audioPlayer.src = src;
+        audioPlayer.play();
+    }
+});
